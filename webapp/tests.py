@@ -1,14 +1,12 @@
-from app import app
-
+from app import app, add
 import os
 import unittest
 
+
 class AppTestCase(unittest.TestCase):
-
-   def test_root_text(self):
-        tester = app.test_client(self)
-        response = tester.get('/')
-        assert 'Hello world!' in response.data
-
+    def test_add(self):
+        answer = add(1,3)
+        assert answer == 4
+    
 if __name__ == '__main__':
     unittest.main()
