@@ -5,4 +5,4 @@ services:
 before_install:
     - docker build -t tommywenjiezhang/docker_python_pipeline_setup .
 script:
-    - docker run -e CI=true --name docker_python_pipeline_setup tommywenjiezhang/docker_python_pipeline_setup coverage run -m unittest tests.py
+    - docker run -e CI=true --name docker_python_pipeline_setup tommywenjiezhang/docker_python_pipeline_setup python3 -m unittest tests.py
