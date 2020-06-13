@@ -1,5 +1,5 @@
 #!/bin/bash
-docker login --username=tommywenjiezhang --password=$(heroku auth:token) registry.heroku.com
+docker login --username=$DOCKER_USERNAME --password=$(heroku auth:token) registry.heroku.com
 heroku container:push web --app docker-python-pipeline
 heroku container:release web
 heroku open
